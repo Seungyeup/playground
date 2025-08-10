@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jupyterlab-pvc
+  namespace: spark-cluster
+spec:
+  accessModes:
+    - ReadWriteOnce          
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: local-path # 예: local-path, longhorn, rook-cephfs 등
